@@ -1,20 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="content">
+    <div class="home-card">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+      <!-- Particules décoratives -->
+      <div class="particles">
+        <span></span><span></span><span></span>
+        <span></span><span></span><span></span>
+      </div>
+
+      <!-- Logo -->
+      <div class="logo-wrapper">
+        <div class="logo-ring"></div>
+        <h1 class="logo-title">GCS</h1>
+        <div class="logo-tagline">GLOBAL COACH SPORT</div>
+      </div>
+
+      <!-- Message -->
+      <div class="welcome-block">
+        <h2 class="welcome-title">Bienvenue 👋</h2>
+        <p class="welcome-text">
+          Rejoignez notre communauté de sportifs et coachs professionnels.
+          Pour continuer, veuillez vous connecter ou créer un compte.
+        </p>
+      </div>
+
+      <!-- Boutons -->
+      <div class="btn-group">
+        <ion-button routerLink="/connexion" expand="full" shape="round" class="btn-login">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Se connecter
+        </ion-button>
+
+        <div class="divider">
+          <span class="line"></span>
+          <span class="ou">Ou</span>
+          <span class="line"></span>
+        </div>
+
+        <ion-button routerLink="/inscription" expand="full" shape="round" fill="outline" class="btn-register">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+          S'inscrire
+        </ion-button>
+      </div>
+
+    </div>
   </div>
 </ion-content>

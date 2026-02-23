@@ -1,0 +1,244 @@
+<ion-content [fullscreen]="true">
+  <div class="page-wrapper">
+
+    <!-- ══ PROFIL ══ -->
+    <div class="section-card profile-card">
+      <div class="profile-banner">
+        <div class="banner-overlay"></div>
+      </div>
+      <div class="profile-body">
+        <div class="avatar-wrapper">
+          <div class="avatar">{{ user.prenom[0] }}{{ user.nom[0] }}</div>
+          <div class="avatar-badge"></div>
+        </div>
+        <div class="profile-info">
+          <h2 class="profile-name">{{ user.prenom }} {{ user.nom }}</h2>
+          <p class="profile-email">{{ user.email }}</p>
+          <span class="profile-badge">Utilisateur</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ CATÉGORIE D'ENTRAÎNEMENT ══ -->
+    <div class="section-card">
+      <div class="section-header">
+        <span class="section-dot"></span>
+        <h3>Catégorie d'entraînement</h3>
+      </div>
+      <div class="categories-grid">
+        <div
+          class="category-chip"
+          *ngFor="let cat of categories"
+          [class.active]="selectedCategory === cat.id"
+          (click)="selectCategory(cat.id)">
+          <span class="cat-emoji">{{ cat.emoji }}</span>
+          <span class="cat-label">{{ cat.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ COACH ══ -->
+    <div class="section-card" *ngIf="selectedCategory">
+      <div class="section-header">
+        <span class="section-dot"></span>
+        <h3>Choisir un coach</h3>
+      </div>
+      <div class="coaches-list">
+        <div
+          class="coach-card"
+          *ngFor="let coach of filteredCoaches"
+          [class.active]="selectedCoach?.id === coach.id"
+          (click)="selectCoach(coach)">
+          <div class="coach-avatar">{{ coach.prenom[0] }}{{ coach.nom[0] }}</div>
+          <div class="coach-info">
+            <p class="coach-name">{{ coach.prenom }} {{ coach.nom }}</p>
+            <p class="coach-spec">{{ coach.specialite }}</p>
+            <div class="coach-rating">
+              <span
+                class="star"
+                *ngFor="let s of [1,2,3,4,5]; let i = index"
+                [class.filled]="i < coach.note">★</span>
+              <span class="avis-count">({{ coach.avis }} avis)</span>
+            </div>
+          </div>
+          <span class="check-mark" *ngIf="selectedCoach?.id === coach.id">✓</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ ABONNEMENT ══ -->
+    <div class="section-card" *ngIf="selectedCoach">
+      <div class="section-header">
+        <span class="section-dot"></span>
+        <h3>Type d'abonnement</h3>
+      </div>
+
+      <div class="sub-types">
+        <div
+          class="sub-type-card"
+          *ngFor="let sub of subscriptions"
+          [class.active]="selectedSub === sub.id"
+          (click)="selectedSub = sub.id">
+          <span class="sub-saving" *ngIf="sub.saving">{{ sub.saving }}</span>
+          <div class="sub-duration">{{ sub.label }}</div>
+          <div class="sub-price">{{ sub.prix }} Ar</div>
+        </div>
+      </div>
+
+      <!-- Paiement -->
+      <div class="section-header" style="margin-top: 22px;">
+        <span class="section-dot"></span>
+        <h3>Mode de paiement</h3>
+      </div>
+
+      <div class="payment-tabs">
+        <div
+          class="payment-tab"
+          *ngFor="let pt of paymentTypes"
+          [class.active]="selectedPaymentType === pt.id"
+          (click)="selectPaymentType(pt.id)">
+          <span class="pay-emoji">{{ pt.emoji }}</span>
+          <span>{{ pt.label }}</span>
+        </div>
+      </div>
+
+      <!-- Liquide -->
+      <div class="payment-detail info-box" *ngIf="selectedPaymentType === 'liquide'">
+        <p>💡 Payez en espèces directement auprès de votre coach lors de votre première séance.</p>
+      </div>
+
+      <!-- Mobile Money -->
+      <div class="payment-detail" *ngIf="selectedPaymentType === 'mobile'">
+        <p class="sub-label">Choisir l'opérateur</p>
+        <div class="mobile-operators">
+          <div
+            class="operator-chip"
+            *ngFor="let op of mobileOperators"
+            [class.active]="selectedOperator === op.id"
+            [style.--op-color]="op.color"
+            (click)="selectedOperator = op.id">
+            {{ op.label }}
+          </div>
+        </div>
+        <div class="input-group" *ngIf="selectedOperator">
+          <ion-item lines="none">
+            <ion-input
+              [(ngModel)]="mobileNumber"
+              label="Numéro {{ selectedOperator }}"
+              label-placement="floating"
+              fill="outline"
+              placeholder="Ex: 034 XX XXX XX"
+              type="tel">
+            </ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+      <!-- Carte bancaire -->
+      <div class="payment-detail" *ngIf="selectedPaymentType === 'carte'">
+        <div class="input-group">
+          <ion-item lines="none">
+            <ion-input
+              [(ngModel)]="cardNumber"
+              label="Numéro de carte"
+              label-placement="floating"
+              fill="outline"
+              placeholder="XXXX XXXX XXXX XXXX"
+              type="text">
+            </ion-input>
+          </ion-item>
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <ion-item lines="none">
+              <ion-input
+                [(ngModel)]="cardExpiry"
+                label="Expiration"
+                label-placement="floating"
+                fill="outline"
+                placeholder="MM/AA"
+                type="text">
+              </ion-input>
+            </ion-item>
+          </div>
+          <div class="input-group">
+            <ion-item lines="none">
+              <ion-input
+                [(ngModel)]="cardCvv"
+                label="CVV"
+                label-placement="floating"
+                fill="outline"
+                placeholder="XXX"
+                type="password">
+              </ion-input>
+            </ion-item>
+          </div>
+        </div>
+        <div class="input-group">
+          <ion-item lines="none">
+            <ion-input
+              [(ngModel)]="cardName"
+              label="Nom sur la carte"
+              label-placement="floating"
+              fill="outline"
+              placeholder="Prénom NOM"
+              type="text">
+            </ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+      <ion-button
+        expand="full"
+        shape="round"
+        class="btn-primary"
+        (click)="subscribe()"
+        [disabled]="!selectedSub || !selectedPaymentType">
+        Confirmer l'abonnement
+      </ion-button>
+    </div>
+
+    <!-- ══ AVIS COACH ══ -->
+    <div class="section-card" *ngIf="selectedCoach">
+      <div class="section-header">
+        <span class="section-dot"></span>
+        <h3>Donner un avis à {{ selectedCoach.prenom }}</h3>
+      </div>
+
+      <div class="stars-input">
+        <span
+          class="star-btn"
+          *ngFor="let s of [1,2,3,4,5]"
+          [class.filled]="s <= avisNote"
+          (click)="avisNote = s">★</span>
+        <span class="stars-label" *ngIf="avisNote">{{ starLabels[avisNote - 1] }}</span>
+      </div>
+
+      <ion-item lines="none" class="textarea-item">
+        <ion-textarea
+          [(ngModel)]="avisTexte"
+          label="Votre commentaire"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Partagez votre expérience avec ce coach..."
+          [autoGrow]="true"
+          rows="3">
+        </ion-textarea>
+      </ion-item>
+
+      <ion-button
+        expand="full"
+        shape="round"
+        class="btn-primary"
+        (click)="submitAvis()"
+        [disabled]="!avisNote || !avisTexte">
+        Publier mon avis
+      </ion-button>
+
+      <div class="success-toast" [class.show]="avisSubmitted">
+        ✓ Avis publié avec succès !
+      </div>
+    </div>
+
+  </div>
+</ion-content>

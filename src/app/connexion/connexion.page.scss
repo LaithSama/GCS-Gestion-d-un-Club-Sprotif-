@@ -1,0 +1,208 @@
+/* ── Fond animé ── */
+ion-content {
+  --background: linear-gradient(135deg, #021a02, #02a002, #014d01, #000);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Centrage ── */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ── Card ── */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(45, 173, 45, 0.25);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(45,173,45,0.1);
+  animation: cardEntrance 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  overflow: hidden;
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Image + overlay ── */
+.card-image-wrapper {
+  position: relative;
+}
+
+.banner-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+}
+
+/* ── Header ── */
+ion-card-header {
+  padding-bottom: 0;
+}
+
+.app-title {
+  color: white;
+  font-size: 38px;
+  font-family: "Times New Roman", serif;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-shadow: 0 0 20px rgba(45, 200, 45, 0.6);
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.88em;
+  margin: 2px 0 12px;
+  letter-spacing: 1px;
+}
+
+/* ── Items / Inputs ── */
+ion-item {
+  --background: transparent;
+  --border-color: transparent;
+  margin-bottom: 4px;
+}
+
+ion-input {
+  margin: 8px 0;
+  --highlight-color-focused: rgb(45, 200, 45);
+  --color: white;
+  --placeholder-color: rgba(255,255,255,0.4);
+  --background: rgba(255,255,255,0.06);
+  --border-color: rgba(45, 173, 45, 0.35);
+  --label-color: rgba(255,255,255,0.7);
+  --border-radius: 12px;
+  transition: box-shadow 0.3s ease;
+}
+
+ion-input:focus-within {
+  box-shadow: 0 0 12px rgba(45, 200, 45, 0.3);
+}
+
+/* ── Lien oublié ── */
+.forgot-wrapper {
+  text-align: center;
+  margin: 4px 4px 16px;
+}
+
+.forgot-link {
+  color: rgba(180, 255, 180, 0.75);
+  font-size: 0.82em;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forgot-link:hover {
+  color: rgb(45, 200, 45);
+}
+
+/* ── Bouton Se connecter ── */
+.btn-login {
+  --background: linear-gradient(135deg, rgb(30, 160, 30), rgb(10, 100, 10));
+  --background-hover: linear-gradient(135deg, rgb(45, 200, 45), rgb(20, 130, 20));
+  --box-shadow: 0 4px 20px rgba(45, 173, 45, 0.45);
+  --border-radius: 50px;
+  margin: 10px 0;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: fadeSlideUp 0.6s 0.3s both;
+}
+
+.btn-login:active {
+  transform: scale(0.96);
+}
+
+.btn-login::part(native):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(45, 200, 45, 0.55);
+}
+
+/* ── Séparateur ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ou {
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.85em;
+  letter-spacing: 2px;
+}
+
+/* ── Bouton S'inscrire ── */
+.btn-register {
+  --background: transparent;
+  --background-hover: rgba(45, 173, 45, 0.1);
+  --border-color: rgba(45, 173, 45, 0.55);
+  --color: rgb(140, 230, 140);
+  --border-radius: 50px;
+  margin: 0 0 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  animation: fadeSlideUp 0.6s 0.45s both;
+}
+
+.btn-register::part(native):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 200, 45, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ── Animations d'entrée boutons ── */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Ripple personnalisé au clic ── */
+ion-button::part(native) {
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+ion-button::part(native):active {
+  transform: scale(0.97);
+}

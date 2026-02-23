@@ -1,0 +1,57 @@
+<ion-content [fullscreen]="true">
+  <div class="content">
+    <ion-card class="login-card">
+      <div class="card-image-wrapper">
+        <img src="assets/img/bn.jpg" alt="banner" class="banner-img"/>
+        <div class="image-overlay"></div>
+      </div>
+
+      <ion-card-header>
+        <ion-card-title class="app-title">GCS</ion-card-title>
+        <p class="subtitle">Bienvenue, connectez-vous</p>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-input
+            label="Email"
+            label-placement="floating"
+            fill="outline"
+            placeholder="Entrer votre email"
+            type="email">
+          </ion-input>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-input
+            label="Mot de passe"
+            label-placement="floating"
+            fill="outline"
+            placeholder="Entrer votre mot de passe"
+            type="password">
+          </ion-input>
+        </ion-item>
+
+        <div class="forgot-wrapper">
+          <a href="#" class="forgot-link">Email / Mot de passe oublié ?</a>
+        </div>
+
+        <ion-button expand="full" shape="round" class="btn-login">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Se connecter
+        </ion-button>
+
+        <div class="divider">
+          <span class="line"></span>
+          <span class="ou">Ou</span>
+          <span class="line"></span>
+        </div>
+
+        <ion-button routerLink="/inscription" expand="full" shape="round" fill="outline" class="btn-register">
+          <ion-icon slot="start" name="person-add-outline"></ion-icon>
+          S'inscrire
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

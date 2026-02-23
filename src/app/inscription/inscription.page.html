@@ -1,0 +1,99 @@
+<ion-content [fullscreen]="true">
+  <div class="content">
+    <ion-card class="login-card">
+
+      <div class="card-image-wrapper">
+        <img src="assets/img/bn.jpg" alt="banner" class="banner-img"/>
+        <div class="image-overlay"></div>
+      </div>
+
+      <ion-card-header>
+        <ion-card-title class="app-title">GCS</ion-card-title>
+        <p class="subtitle">Créer votre compte</p>
+      </ion-card-header>
+
+      <ion-card-content>
+
+        <!-- ── Choix du rôle ── -->
+        <div class="role-selector">
+          <div class="role-btn" [class.active]="role === 'utilisateur'" (click)="setRole('utilisateur')">
+            <span>Utilisateur</span>
+          </div>
+          <div class="role-btn" [class.active]="role === 'coach'" (click)="setRole('coach')">
+            <span>Coach</span>
+          </div>
+        </div>
+
+        <!-- ── Formulaire commun ── -->
+        <div class="form-fields" [class.visible]="role !== ''">
+
+          <div class="input-row">
+            <ion-item lines="none">
+              <ion-input label="Nom" label-placement="floating" fill="outline"
+                placeholder="Votre nom" type="text"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-input label="Prénom" label-placement="floating" fill="outline"
+                placeholder="Votre prénom" type="text"></ion-input>
+            </ion-item>
+          </div>
+
+          <ion-item lines="none">
+            <ion-input label="Email" label-placement="floating" fill="outline"
+              placeholder="Votre email" type="email"></ion-input>
+          </ion-item>
+
+          <!-- ── Champs spécifiques Coach ── -->
+          <div class="coach-fields" [class.show]="role === 'coach'">
+            <ion-item lines="none">
+              <ion-input label="Spécialité" label-placement="floating" fill="outline"
+                placeholder="Ex: Musculation, Yoga..." type="text"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-input label="Années d'expérience" label-placement="floating" fill="outline"
+                placeholder="Ex: 5" type="number"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-input label="Numéro de certification" label-placement="floating" fill="outline"
+                placeholder="Ex: CERT-12345" type="text"></ion-input>
+            </ion-item>
+          </div>
+
+          <ion-item lines="none">
+            <ion-input label="Mot de passe" label-placement="floating" fill="outline"
+              placeholder="Votre mot de passe" type="password"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none">
+            <ion-input label="Confirmer le mot de passe" label-placement="floating" fill="outline"
+              placeholder="Répétez le mot de passe" type="password"></ion-input>
+          </ion-item>
+
+          <ion-button expand="full" shape="round" class="btn-register-submit">
+            <ion-icon slot="start" name="person-add-outline"></ion-icon>
+            S'inscrire en tant que {{ role === 'coach' ? 'Coach' : 'Utilisateur' }}
+          </ion-button>
+
+        </div>
+
+        <!-- ── Message si aucun rôle sélectionné ── -->
+        <div class="select-hint" [class.hidden]="role !== ''">
+          <ion-icon name="arrow-up-outline"></ion-icon>
+          <p>Choisissez votre profil pour commencer</p>
+        </div>
+
+        <div class="divider">
+          <span class="line"></span>
+          <span class="ou">Déjà un compte ?</span>
+          <span class="line"></span>
+        </div>
+
+        <ion-button routerLink="/connexion" expand="full" shape="round" fill="outline" class="btn-login">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Se connecter
+        </ion-button>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

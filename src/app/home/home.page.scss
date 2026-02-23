@@ -1,27 +1,214 @@
-#container {
+ion-content {
+  --background: linear-gradient(135deg, #021a02, #02a002, #014d01, #000);
+  background-size: 400% 400%;
+  animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+/* ── Card principale ── */
+.home-card {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 28px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(45, 173, 45, 0.28);
+  box-shadow:
+    0 8px 40px rgba(0, 0, 0, 0.5),
+    0 0 80px rgba(45, 173, 45, 0.08);
+  padding: 40px 32px 36px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: cardEntrance 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
 
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(50px) scale(0.95); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Particules décoratives ── */
+.particles {
   position: absolute;
-  left: 0;
-  right: 0;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particles span {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(45, 200, 45, 0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+.particles span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s;   width: 4px; height: 4px; }
+.particles span:nth-child(2) { top: 20%; right: 12%; animation-delay: 0.8s; width: 8px; height: 8px; opacity: 0.4; }
+.particles span:nth-child(3) { top: 60%; left: 8%;  animation-delay: 1.4s; width: 5px; height: 5px; }
+.particles span:nth-child(4) { bottom: 25%; right: 10%; animation-delay: 0.4s; width: 6px; height: 6px; opacity: 0.6; }
+.particles span:nth-child(5) { bottom: 15%; left: 20%; animation-delay: 1.8s; width: 4px; height: 4px; }
+.particles span:nth-child(6) { top: 40%; right: 6%; animation-delay: 1s;   width: 7px; height: 7px; opacity: 0.3; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0);   opacity: 0.6; }
+  50%       { transform: translateY(-14px); opacity: 1; }
+}
+
+/* ── Logo ── */
+.logo-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  animation: logoIn 0.9s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes logoIn {
+  from { opacity: 0; transform: scale(0.7); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.logo-ring {
+  position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -55%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 2px solid rgba(45, 200, 45, 0.35);
+  box-shadow:
+    0 0 30px rgba(45, 200, 45, 0.2),
+    inset 0 0 20px rgba(45, 200, 45, 0.05);
+  animation: ringPulse 2.5s ease-in-out infinite;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+@keyframes ringPulse {
+  0%, 100% { transform: translate(-50%, -55%) scale(1);    opacity: 0.6; }
+  50%       { transform: translate(-50%, -55%) scale(1.08); opacity: 1; }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
+.logo-title {
+  font-family: "Times New Roman", serif;
+  font-size: 72px;
+  font-weight: 700;
+  letter-spacing: 10px;
+  color: #fff;
+  text-shadow:
+    0 0 30px rgba(45, 200, 45, 0.7),
+    0 0 60px rgba(45, 200, 45, 0.3);
+  line-height: 1;
   margin: 0;
 }
 
-#container a {
-  text-decoration: none;
+.logo-tagline {
+  font-size: 0.65em;
+  letter-spacing: 4px;
+  color: rgba(45, 200, 45, 0.8);
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+/* ── Message de bienvenue ── */
+.welcome-block {
+  margin-bottom: 32px;
+  animation: fadeUp 0.7s 0.4s both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.welcome-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.welcome-text {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.9em;
+  line-height: 1.6;
+  padding: 0 8px;
+}
+
+/* ── Boutons ── */
+.btn-group {
+  animation: fadeUp 0.7s 0.55s both;
+}
+
+.btn-login {
+  --background: linear-gradient(135deg, rgb(30, 160, 30), rgb(10, 100, 10));
+  --background-hover: linear-gradient(135deg, rgb(45, 200, 45), rgb(20, 130, 20));
+  --box-shadow: 0 4px 20px rgba(45, 173, 45, 0.45);
+  --border-radius: 50px;
+  margin: 0 0 8px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-login::part(native):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(45, 200, 45, 0.55);
+}
+
+.btn-login::part(native):active { transform: scale(0.96); }
+
+.btn-register {
+  --background: transparent;
+  --background-hover: rgba(45, 173, 45, 0.1);
+  --border-color: rgba(45, 173, 45, 0.55);
+  --color: rgb(140, 230, 140);
+  --border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.btn-register::part(native):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 200, 45, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-register::part(native):active { transform: scale(0.96); }
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.ou {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.82em;
+  letter-spacing: 2px;
 }

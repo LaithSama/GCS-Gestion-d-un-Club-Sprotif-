@@ -1,0 +1,129 @@
+<ion-content [fullscreen]="true">
+  <div class="page-wrapper">
+
+    <!-- ══ PROFIL COACH ══ -->
+    <div class="section-card profile-card">
+      <div class="profile-banner">
+        <div class="banner-overlay"></div>
+        <div class="banner-stats">
+          <div class="banner-stat">
+            <span class="stat-value">{{ abonnes.length }}</span>
+            <span class="stat-label">Abonnés</span>
+          </div>
+          <div class="banner-stat">
+            <span class="stat-value">{{ moyenneNote | number:'1.1-1' }}</span>
+            <span class="stat-label">Note moy.</span>
+          </div>
+          <div class="banner-stat">
+            <span class="stat-value">{{ avisRecus.length }}</span>
+            <span class="stat-label">Avis</span>
+          </div>
+        </div>
+      </div>
+      <div class="profile-body">
+        <div class="avatar-wrapper">
+          <div class="avatar">{{ coach.prenom[0] }}{{ coach.nom[0] }}</div>
+          <div class="avatar-badge"></div>
+        </div>
+        <div class="profile-info">
+          <h2 class="profile-name">{{ coach.prenom }} {{ coach.nom }}</h2>
+          <p class="profile-spec">{{ coach.specialite }}</p>
+          <span class="profile-badge">Coach Certifié</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ LISTE DES ABONNÉS ══ -->
+    <div class="section-card">
+      <div class="section-header">
+        <span class="section-dot"></span>
+        <h3>Mes abonnés ({{ abonnes.length }})</h3>
+      </div>
+
+      <!-- Filtres -->
+      <div class="filter-tabs">
+        <div
+          class="filter-tab"
+          *ngFor="let f of filters"
+          [class.active]="activeFilter === f.id"
+          (click)="activeFilter = f.id">
+          {{ f.label }}
+        </div>
+      </div>
+
+      <!-- Liste -->
+      <div class="abonnes-list">
+        <div class="abonne-item" *ngFor="let ab of filteredAbonnes">
+          <div class="abonne-avatar">{{ ab.prenom[0] }}{{ ab.nom[0] }}</div>
+          <div class="abonne-info">
+            <p class="abonne-name">{{ ab.prenom }} {{ ab.nom }}</p>
+            <p class="abonne-sub">{{ ab.abonnement }} · depuis {{ ab.depuis }}</p>
+          </div>
+          <span class="abonne-status" [class]="ab.statut">
+            {{ ab.statut === 'actif' ? 'Actif' : 'Expiré' }}
+          </span>
+        </div>
+
+        <div class="empty-state" *ngIf="filteredAbonnes.length === 0">
+          <span class="empty-emoji">👥</span>
+          <p>Aucun abonné dans cette catégorie</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ AVIS REÇUS ══ -->
+    <div class="section-card">
+      <div class="section-header">
+        <span class="section-dot"></span>
+        <h3>Avis de mes abonnés</h3>
+      </div>
+
+      <!-- Résumé notes -->
+      <div class="rating-summary">
+        <div class="rating-big">
+          <span class="rating-number">{{ moyenneNote | number:'1.1-1' }}</span>
+          <div class="rating-stars">
+            <span
+              class="star"
+              *ngFor="let s of [1,2,3,4,5]; let i = index"
+              [class.filled]="i < moyenneNote">★</span>
+          </div>
+          <span class="rating-count">{{ avisRecus.length }} avis</span>
+        </div>
+        <div class="rating-bars">
+          <div class="rating-bar-row" *ngFor="let b of ratingBars">
+            <span class="bar-label">{{ b.stars }}★</span>
+            <div class="bar-track">
+              <div
+                class="bar-fill"
+                [style.width.%]="avisRecus.length ? (b.count / avisRecus.length) * 100 : 0">
+              </div>
+            </div>
+            <span class="bar-count">{{ b.count }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Liste des avis -->
+      <div class="avis-list">
+        <div class="avis-card" *ngFor="let avis of avisRecus">
+          <div class="avis-header">
+            <div class="avis-avatar">{{ avis.auteur[0] }}</div>
+            <div class="avis-meta">
+              <p class="avis-auteur">{{ avis.auteur }}</p>
+              <div class="avis-stars">
+                <span
+                  class="star"
+                  *ngFor="let s of [1,2,3,4,5]; let i = index"
+                  [class.filled]="i < avis.note">★</span>
+                <span class="avis-date">{{ avis.date }}</span>
+              </div>
+            </div>
+          </div>
+          <p class="avis-texte">{{ avis.texte }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
