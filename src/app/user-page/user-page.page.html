@@ -1,7 +1,6 @@
 <ion-content [fullscreen]="true">
   <div class="page-wrapper">
 
-    <!-- ══ PROFIL ══ -->
     <div class="section-card profile-card">
       <div class="profile-banner">
         <div class="banner-overlay"></div>
@@ -19,7 +18,6 @@
       </div>
     </div>
 
-    <!-- ══ CATÉGORIE D'ENTRAÎNEMENT ══ -->
     <div class="section-card">
       <div class="section-header">
         <span class="section-dot"></span>
@@ -37,7 +35,6 @@
       </div>
     </div>
 
-    <!-- ══ COACH ══ -->
     <div class="section-card" *ngIf="selectedCategory">
       <div class="section-header">
         <span class="section-dot"></span>
@@ -66,7 +63,6 @@
       </div>
     </div>
 
-    <!-- ══ ABONNEMENT ══ -->
     <div class="section-card" *ngIf="selectedCoach">
       <div class="section-header">
         <span class="section-dot"></span>
@@ -85,7 +81,6 @@
         </div>
       </div>
 
-      <!-- Paiement -->
       <div class="section-header" style="margin-top: 22px;">
         <span class="section-dot"></span>
         <h3>Mode de paiement</h3>
@@ -102,12 +97,10 @@
         </div>
       </div>
 
-      <!-- Liquide -->
       <div class="payment-detail info-box" *ngIf="selectedPaymentType === 'liquide'">
         <p>💡 Payez en espèces directement auprès de votre coach lors de votre première séance.</p>
       </div>
 
-      <!-- Mobile Money -->
       <div class="payment-detail" *ngIf="selectedPaymentType === 'mobile'">
         <p class="sub-label">Choisir l'opérateur</p>
         <div class="mobile-operators">
@@ -134,7 +127,6 @@
         </div>
       </div>
 
-      <!-- Carte bancaire -->
       <div class="payment-detail" *ngIf="selectedPaymentType === 'carte'">
         <div class="input-group">
           <ion-item lines="none">
@@ -198,7 +190,6 @@
       </ion-button>
     </div>
 
-    <!-- ══ AVIS COACH ══ -->
     <div class="section-card" *ngIf="selectedCoach">
       <div class="section-header">
         <span class="section-dot"></span>

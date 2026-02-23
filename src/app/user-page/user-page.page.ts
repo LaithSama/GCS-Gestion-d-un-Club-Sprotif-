@@ -11,15 +11,12 @@ import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonItem, IonInp
   imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonButton, IonItem, IonInput, IonTextarea]
 })
 export class UserPagePage implements OnInit {
-
-  // ── Profil utilisateur (mock) ──
   user = {
     nom: 'Rakoto',
     prenom: 'Jean',
     email: 'jean.rakoto@email.com',
   };
 
-  // ── Catégories ──
   categories = [
     { id: 'musculation',   label: 'Musculation',   emoji: '🏋️' },
     { id: 'yoga',          label: 'Yoga',           emoji: '🧘' },
@@ -30,7 +27,6 @@ export class UserPagePage implements OnInit {
   ];
   selectedCategory: string = '';
 
-  // ── Coachs (mock) ──
   coaches = [
     { id: 1, nom: 'Randria',     prenom: 'Marc',  specialite: 'Musculation',  categorie: 'musculation',   note: 5, avis: 24 },
     { id: 2, nom: 'Rasolofo',    prenom: 'Hery',  specialite: 'Musculation',  categorie: 'musculation',   note: 4, avis: 17 },
@@ -48,7 +44,6 @@ export class UserPagePage implements OnInit {
     return this.coaches.filter(c => c.categorie === this.selectedCategory);
   }
 
-  // ── Abonnements ──
   subscriptions = [
     { id: 'semaine', label: 'Par semaine', prix: '15 000', saving: ''     },
     { id: 'mois',    label: 'Par mois',    prix: '50 000', saving: '-17%' },
@@ -56,7 +51,6 @@ export class UserPagePage implements OnInit {
   ];
   selectedSub: string = '';
 
-  // ── Paiements ──
   paymentTypes = [
     { id: 'liquide', label: 'Liquide',        emoji: '💵' },
     { id: 'mobile',  label: 'Mobile Money',   emoji: '📱' },
@@ -77,13 +71,11 @@ export class UserPagePage implements OnInit {
   cardCvv:      string  = '';
   cardName:     string  = '';
 
-  // ── Avis ──
   avisNote:      number  = 0;
   avisTexte:     string  = '';
   avisSubmitted: boolean = false;
   starLabels = ['Mauvais', 'Passable', 'Bien', 'Très bien', 'Excellent'];
 
-  // ────────────────────────────────────
   selectCategory(id: string) {
     this.selectedCategory   = id;
     this.selectedCoach      = null;

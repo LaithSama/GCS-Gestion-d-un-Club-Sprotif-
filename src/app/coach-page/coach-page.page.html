@@ -1,7 +1,6 @@
 <ion-content [fullscreen]="true">
   <div class="page-wrapper">
 
-    <!-- ══ PROFIL COACH ══ -->
     <div class="section-card profile-card">
       <div class="profile-banner">
         <div class="banner-overlay"></div>
@@ -33,14 +32,12 @@
       </div>
     </div>
 
-    <!-- ══ LISTE DES ABONNÉS ══ -->
     <div class="section-card">
       <div class="section-header">
         <span class="section-dot"></span>
         <h3>Mes abonnés ({{ abonnes.length }})</h3>
       </div>
 
-      <!-- Filtres -->
       <div class="filter-tabs">
         <div
           class="filter-tab"
@@ -51,7 +48,6 @@
         </div>
       </div>
 
-      <!-- Liste -->
       <div class="abonnes-list">
         <div class="abonne-item" *ngFor="let ab of filteredAbonnes">
           <div class="abonne-avatar">{{ ab.prenom[0] }}{{ ab.nom[0] }}</div>
@@ -71,14 +67,12 @@
       </div>
     </div>
 
-    <!-- ══ AVIS REÇUS ══ -->
     <div class="section-card">
       <div class="section-header">
         <span class="section-dot"></span>
         <h3>Avis de mes abonnés</h3>
       </div>
 
-      <!-- Résumé notes -->
       <div class="rating-summary">
         <div class="rating-big">
           <span class="rating-number">{{ moyenneNote | number:'1.1-1' }}</span>
@@ -104,7 +98,6 @@
         </div>
       </div>
 
-      <!-- Liste des avis -->
       <div class="avis-list">
         <div class="avis-card" *ngFor="let avis of avisRecus">
           <div class="avis-header">

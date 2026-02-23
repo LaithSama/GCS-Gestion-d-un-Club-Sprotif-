@@ -1,4 +1,3 @@
-/* ── Fond animé ── */
 ion-content {
   --background: linear-gradient(135deg, #021a02, #02a002, #014d01, #000);
   background-size: 400% 400%;
@@ -11,7 +10,6 @@ ion-content {
   100% { background-position: 0% 50%; }
 }
 
-/* ── Centrage ── */
 .content {
   display: flex;
   justify-content: center;
@@ -21,7 +19,6 @@ ion-content {
   padding: 20px;
 }
 
-/* ── Card ── */
 .login-card {
   width: 100%;
   max-width: 420px;
@@ -40,7 +37,6 @@ ion-content {
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── Image ── */
 .card-image-wrapper { position: relative; }
 .banner-img { width: 100%; height: 140px; object-fit: cover; display: block; }
 .image-overlay {
@@ -48,7 +44,6 @@ ion-content {
   background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
 }
 
-/* ── Titre ── */
 ion-card-header { padding-bottom: 0; }
 
 .app-title {
@@ -67,7 +62,6 @@ ion-card-header { padding-bottom: 0; }
   letter-spacing: 1px;
 }
 
-/* ── Sélecteur de rôle ── */
 .role-selector {
   display: flex;
   gap: 12px;
@@ -111,7 +105,6 @@ ion-card-header { padding-bottom: 0; }
   filter: drop-shadow(0 0 6px rgba(45,200,45,0.7));
 }
 
-/* ── Formulaire ── */
 .form-fields {
   max-height: 0;
   overflow: hidden;
@@ -124,7 +117,6 @@ ion-card-header { padding-bottom: 0; }
   opacity: 1;
 }
 
-/* ── Ligne Nom / Prénom ── */
 .input-row {
   display: flex;
   gap: 8px;
@@ -135,7 +127,6 @@ ion-card-header { padding-bottom: 0; }
   min-width: 0;
 }
 
-/* ── Champs Coach ── */
 .coach-fields {
   max-height: 0;
   overflow: hidden;
@@ -148,7 +139,6 @@ ion-card-header { padding-bottom: 0; }
   opacity: 1;
 }
 
-/* ── Items / Inputs ── */
 ion-item {
   --background: transparent;
   --border-color: transparent;
@@ -166,7 +156,6 @@ ion-input {
   --border-radius: 12px;
 }
 
-/* ── Hint sélection rôle ── */
 .select-hint {
   text-align: center;
   color: rgba(255,255,255,0.35);
@@ -191,7 +180,6 @@ ion-input {
   50%       { opacity: 0.9; transform: translateY(-4px); }
 }
 
-/* ── Bouton S'inscrire ── */
 .btn-register-submit {
   --background: linear-gradient(135deg, rgb(30,160,30), rgb(10,100,10));
   --border-radius: 50px;
@@ -212,7 +200,6 @@ ion-input {
   transform: scale(0.97);
 }
 
-/* ── Séparateur ── */
 .divider {
   display: flex;
   align-items: center;
@@ -229,7 +216,6 @@ ion-input {
   white-space: nowrap;
 }
 
-/* ── Bouton Se connecter ── */
 .btn-login {
   --background: transparent;
   --background-hover: rgba(45,173,45,0.1);

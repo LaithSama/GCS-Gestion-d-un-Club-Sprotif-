@@ -1,6 +1,3 @@
-/* ══════════════════════════════════════
-   FOND ANIMÉ
-══════════════════════════════════════ */
 ion-content {
   --background: linear-gradient(135deg, #021a02, #02a002, #014d01, #000);
   background-size: 400% 400%;
@@ -13,9 +10,6 @@ ion-content {
   100% { background-position: 0% 50%; }
 }
 
-/* ══════════════════════════════════════
-   LAYOUT
-══════════════════════════════════════ */
 .page-wrapper {
   padding: 16px;
   display: flex;
@@ -26,9 +20,6 @@ ion-content {
   padding-bottom: 40px;
 }
 
-/* ══════════════════════════════════════
-   SECTION CARD
-══════════════════════════════════════ */
 .section-card {
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.45);
@@ -46,7 +37,6 @@ ion-content {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Section header ── */
 .section-header {
   display: flex;
   align-items: center;
@@ -70,9 +60,6 @@ ion-content {
   flex-shrink: 0;
 }
 
-/* ══════════════════════════════════════
-   PROFIL
-══════════════════════════════════════ */
 .profile-card { padding: 0; }
 
 .profile-banner {
@@ -155,9 +142,6 @@ ion-content {
   letter-spacing: 0.5px;
 }
 
-/* ══════════════════════════════════════
-   CATÉGORIES
-══════════════════════════════════════ */
 .categories-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -205,9 +189,6 @@ ion-content {
   .cat-label { color: #fff; font-weight: 600; }
 }
 
-/* ══════════════════════════════════════
-   COACHS
-══════════════════════════════════════ */
 .coaches-list {
   display: flex;
   flex-direction: column;
@@ -295,9 +276,6 @@ ion-content {
   flex-shrink: 0;
 }
 
-/* ══════════════════════════════════════
-   ABONNEMENT
-══════════════════════════════════════ */
 .sub-types {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -351,9 +329,6 @@ ion-content {
   border-radius: 10px;
 }
 
-/* ══════════════════════════════════════
-   PAIEMENT
-══════════════════════════════════════ */
 .payment-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -415,7 +390,6 @@ ion-content {
   letter-spacing: 0.3px;
 }
 
-/* ── Opérateurs ── */
 .mobile-operators {
   display: flex;
   gap: 8px;
@@ -443,7 +417,6 @@ ion-content {
   }
 }
 
-/* ── Input row ── */
 .input-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -480,9 +453,6 @@ ion-textarea {
 
 .textarea-item { margin-bottom: 14px; }
 
-/* ══════════════════════════════════════
-   BOUTON PRIMAIRE
-══════════════════════════════════════ */
 .btn-primary {
   --background: linear-gradient(135deg, rgb(30, 160, 30), rgb(10, 100, 10));
   --border-radius: 50px;
@@ -500,9 +470,6 @@ ion-textarea {
 
 .btn-primary::part(native):active { transform: scale(0.97); }
 
-/* ══════════════════════════════════════
-   AVIS
-══════════════════════════════════════ */
 .stars-input {
   display: flex;
   align-items: center;
@@ -527,7 +494,6 @@ ion-textarea {
   margin-left: 6px;
 }
 
-/* ── Toast succès ── */
 .success-toast {
   display: flex;
   align-items: center;

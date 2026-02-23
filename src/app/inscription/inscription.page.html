@@ -14,7 +14,6 @@
 
       <ion-card-content>
 
-        <!-- ── Choix du rôle ── -->
         <div class="role-selector">
           <div class="role-btn" [class.active]="role === 'utilisateur'" (click)="setRole('utilisateur')">
             <span>Utilisateur</span>
@@ -24,7 +23,6 @@
           </div>
         </div>
 
-        <!-- ── Formulaire commun ── -->
         <div class="form-fields" [class.visible]="role !== ''">
 
           <div class="input-row">
@@ -43,7 +41,6 @@
               placeholder="Votre email" type="email"></ion-input>
           </ion-item>
 
-          <!-- ── Champs spécifiques Coach ── -->
           <div class="coach-fields" [class.show]="role === 'coach'">
             <ion-item lines="none">
               <ion-input label="Spécialité" label-placement="floating" fill="outline"
@@ -76,7 +73,6 @@
 
         </div>
 
-        <!-- ── Message si aucun rôle sélectionné ── -->
         <div class="select-hint" [class.hidden]="role !== ''">
           <ion-icon name="arrow-up-outline"></ion-icon>
           <p>Choisissez votre profil pour commencer</p>
