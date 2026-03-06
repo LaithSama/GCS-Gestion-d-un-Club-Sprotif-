@@ -1,19 +1,15 @@
 <div align="center">
 
-<br/>
-
-```
+<pre>
  ██████╗  ██████╗███████╗
 ██╔════╝ ██╔════╝██╔════╝
 ██║  ███╗██║     ███████╗
 ██║   ██║██║     ╚════██║
 ╚██████╔╝╚██████╗███████║
  ╚═════╝  ╚═════╝╚══════╝
-```
+</pre>
 
-### 🌿 **GLOBAL COACH SPORT**
-
-<br/>
+<h3>🌿 GLOBAL COACH SPORT</h3>
 
 <img src="https://img.shields.io/badge/Ionic-6+-3880FF?style=for-the-badge&logo=ionic&logoColor=white"/>
 <img src="https://img.shields.io/badge/Angular-17+-DD0031?style=for-the-badge&logo=angular&logoColor=white"/>
@@ -22,8 +18,8 @@
 
 <br/><br/>
 
-> *Connectez sportifs et coachs professionnels.*
-> *Gérez vos abonnements. Progressez ensemble.* 🏆
+<i>Connectez sportifs et coachs professionnels.<br/>
+Gérez vos abonnements. Progressez ensemble. 🏆</i>
 
 <br/>
 
@@ -41,14 +37,18 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
 
 <br/>
 
-```
+<div align="center">
+
+<pre>
 ┌─────────────────────────────────────────────────────────┐
 │                                                         │
 │   🏋️  Musculation    🧘  Yoga         🏃  Cardio        │
 │   🏊  Natation       🥋  Arts Martiaux  ⚡  CrossFit    │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
-```
+</pre>
+
+</div>
 
 <br/>
 
@@ -61,7 +61,7 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
 ### 🏠 Page d'accueil
 
 <div align="center">
-  <img src="src/assets/sources/home.png" width="240" alt="Page d'accueil" style="border-radius: 20px;"/>
+  <img src="src/assets/sources/home.png" width="240" alt="Page d'accueil"/>
   <br/><br/>
   <i>✨ Écran de bienvenue — Rejoignez la communauté GCS</i>
 </div>
@@ -79,7 +79,7 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
 <div align="center">
   <img src="src/assets/sources/login.png" width="240" alt="Page de connexion"/>
   <br/><br/>
-  <i>🔐 Connexion sécurisée par email & mot de passe</i>
+  <i>🔐 Connexion sécurisée par email &amp; mot de passe</i>
 </div>
 
 <br/>
@@ -118,11 +118,7 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
   <img src="src/assets/sources/user-coach-select.png" width="200" alt="Choix du coach"/>
   <br/><br/>
   <i>🏅 Choix de catégorie &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 🤝 Sélection du coach</i>
-</div>
-
-<br/>
-
-<div align="center">
+  <br/><br/>
   <img src="src/assets/sources/user-subscription-cash.png" width="200" alt="Paiement Liquide"/>
   &nbsp;&nbsp;
   <img src="src/assets/sources/user-subscription-mobile.png" width="200" alt="Mobile Money"/>
@@ -134,17 +130,42 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
 
 <br/>
 
-> 🟢 L'utilisateur choisit sa **catégorie d'entraînement** parmi 6 disciplines, puis sélectionne un **coach disponible** selon ses avis et sa spécialité. Il configure ensuite son **abonnement** (semaine / mois / année) et son **mode de paiement** préféré.
+> 🟢 L'utilisateur choisit sa **catégorie d'entraînement** parmi 6 disciplines, puis sélectionne un **coach disponible** selon ses avis et sa spécialité. Il configure ensuite son **abonnement** et son **mode de paiement** préféré.
 
 <br/>
 
-**Tarifs d'abonnement :**
+<div align="center">
 
-| Durée | Prix | Économie |
-|-------|------|----------|
-| 📅 Par semaine | 15 000 Ar | — |
-| 🗓️ Par mois | 50 000 Ar | -17% |
-| 📆 Par année | 500 000 Ar | -31% |
+<h4>💰 Tarifs d'abonnement</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Durée</th>
+      <th>Prix</th>
+      <th>Économie</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>📅 Par semaine</td>
+      <td>15 000 Ar</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>🗓️ Par mois</td>
+      <td>50 000 Ar</td>
+      <td>-17%</td>
+    </tr>
+    <tr>
+      <td>📆 Par année</td>
+      <td>500 000 Ar</td>
+      <td>-31%</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
 
 <br/>
 
@@ -176,27 +197,23 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
 
 <table>
   <tr>
-    <td width="50%">
-
-### 👤 Côté Utilisateur
-- ✅ Inscription & connexion sécurisée
-- ✅ Choix de la catégorie sportive
-- ✅ Sélection d'un coach certifié
-- ✅ Abonnement semaine / mois / année
-- ✅ 3 modes de paiement disponibles
-- ✅ Dépôt d'avis et commentaires
-
+    <td width="50%" valign="top">
+      <h3>👤 Côté Utilisateur</h3>
+      ✅ Inscription &amp; connexion sécurisée<br/>
+      ✅ Choix de la catégorie sportive<br/>
+      ✅ Sélection d'un coach certifié<br/>
+      ✅ Abonnement semaine / mois / année<br/>
+      ✅ 3 modes de paiement disponibles<br/>
+      ✅ Dépôt d'avis et commentaires
     </td>
-    <td width="50%">
-
-### 🧑‍🏫 Côté Coach
-- ✅ Inscription avec certification
-- ✅ Tableau de bord avec statistiques
-- ✅ Gestion des abonnés (actifs/expirés)
-- ✅ Consultation des avis reçus
-- ✅ Note moyenne calculée automatiquement
-- ✅ Profil public visible par les utilisateurs
-
+    <td width="50%" valign="top">
+      <h3>🧑‍🏫 Côté Coach</h3>
+      ✅ Inscription avec certification<br/>
+      ✅ Tableau de bord avec statistiques<br/>
+      ✅ Gestion des abonnés (actifs/expirés)<br/>
+      ✅ Consultation des avis reçus<br/>
+      ✅ Note moyenne calculée automatiquement<br/>
+      ✅ Profil public visible par les utilisateurs
     </td>
   </tr>
 </table>
@@ -211,13 +228,42 @@ Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, 
 
 <div align="center">
 
-| Couche | Technologie | Version |
-|--------|-------------|---------|
-| 📱 Framework mobile | Ionic | 6+ |
-| 🅰️ Framework front-end | Angular | 17+ |
-| 🔷 Langage principal | TypeScript | 5+ |
-| 🎨 Styles | HTML5 / CSS3 / SCSS | — |
-| 📦 Gestionnaire de paquets | npm | — |
+<table>
+  <thead>
+    <tr>
+      <th>Couche</th>
+      <th>Technologie</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>📱 Framework mobile</td>
+      <td>Ionic</td>
+      <td>6+</td>
+    </tr>
+    <tr>
+      <td>🅰️ Framework front-end</td>
+      <td>Angular</td>
+      <td>17+</td>
+    </tr>
+    <tr>
+      <td>🔷 Langage principal</td>
+      <td>TypeScript</td>
+      <td>5+</td>
+    </tr>
+    <tr>
+      <td>🎨 Styles</td>
+      <td>HTML5 / CSS3 / SCSS</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>📦 Gestionnaire de paquets</td>
+      <td>npm</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
 
 </div>
 
@@ -296,7 +342,9 @@ GCS/
 
 <br/>
 
-```
+<div align="center">
+
+<pre>
 ╔══════════════════════════════════════════════════════════╗
 ║                                                          ║
 ║   Faciliter la mise en relation entre SPORTIFS           ║
@@ -305,7 +353,9 @@ GCS/
 ║   au sein d'un club sportif moderne. 🏆                  ║
 ║                                                          ║
 ╚══════════════════════════════════════════════════════════╝
-```
+</pre>
+
+</div>
 
 <br/>
 
@@ -313,15 +363,13 @@ GCS/
 
 <div align="center">
 
-<br/>
+<img src="https://img.shields.io/badge/Made%20with-💚-1a7a1a?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Powered%20by-Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white"/>
+<img src="https://img.shields.io/badge/Built%20with-Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white"/>
 
-![Made with Love](https://img.shields.io/badge/Made%20with-💚-1a7a1a?style=for-the-badge)
-![Ionic](https://img.shields.io/badge/Powered%20by-Ionic-3880FF?style=for-the-badge&logo=ionic&logoColor=white)
-![Angular](https://img.shields.io/badge/Built%20with-Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+<br/><br/>
 
-<br/>
-
-*© 2025 GCS — Global Coach Sport. Tous droits réservés.*
+<i>© 2025 GCS — Global Coach Sport. Tous droits réservés.</i>
 
 <br/>
 
