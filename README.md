@@ -9,7 +9,7 @@
  ╚═════╝  ╚═════╝╚══════╝
 </pre>
 
-<h3>🌿 GLOBAL COACH SPORT</h3>
+<h3>🏟️ GESTION D'UN CLUB SPORTIF</h3>
 
 <img src="https://img.shields.io/badge/Ionic-6+-3880FF?style=for-the-badge&logo=ionic&logoColor=white"/>
 <img src="https://img.shields.io/badge/Angular-17+-DD0031?style=for-the-badge&logo=angular&logoColor=white"/>
@@ -31,7 +31,7 @@ Gérez vos abonnements. Progressez ensemble. 🏆</i>
 
 ## 📌 À propos du projet
 
-**GCS (Global Coach Sport)** est une application mobile moderne développée avec **Ionic** et **Angular**, pensée pour révolutionner la gestion des clubs sportifs.
+**GCS (Gestion d'un Club Sportif)** est une application mobile moderne développée avec **Ionic** et **Angular**, pensée pour révolutionner la gestion des clubs sportifs.
 
 Elle crée un pont direct entre **sportifs motivés** et **coachs certifiés**, tout en automatisant la gestion des abonnements, des catégories sportives et des retours d'expérience.
 
@@ -369,7 +369,7 @@ GCS/
 
 <br/><br/>
 
-<i>© 2025 GCS — Global Coach Sport. Tous droits réservés.</i>
+<i>© 2025 GCS — Gestion d'un Club Sportif. Tous droits réservés.</i>
 
 <br/>
 
